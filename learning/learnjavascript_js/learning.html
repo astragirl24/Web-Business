@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+            function callDoSum(){
+                var txtA = document.getElementById('id_a');
+                var txtB = document.getElementById('id_b');
+                var result = doSum(txtA.value, txtB.value);
+                document.getElementById('id_result').innerHTML = result;
+            }
+            function doSum(a,b){
+                return (eval(a)+eval(b));
+            }
+            
+        </script>
+    </head>
+    <body>
+        <p>Input a:
+            <input type="number" id="id_a">
+        </p>
+        <p>Input b:
+            <input type="number" id="id_b">
+        </p>
+        <input type="button" value="Compute +" onclick="callDoSum()"/>
+        <p>Results:<label id="id_result"></label></p>
+        <input value="Hello Catchellers_">
+        <input type="button" value="ClickMe!" onclick="alert('She was pretty girl!')";>
+    </body>
+</html>
+

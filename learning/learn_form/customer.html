@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <title>
+            Customer Form  - Đỗ Thị Diễm Hương 
+        </title>
+        <script>
+            normal_customer=0
+            VIP_customer=0
+            function save_customer()
+            {
+                id=frm_customer_input.customer_id.value
+                name=frm_customer_input.customer_name.value
+                email=frm_customer_input.customer_email.value
+                type=frm_customer_input.type_of_customer.checked
+                alert(type)
+                if (type==true)
+                    VIP_customer=VIP_customer+1
+                else
+                    normal_customer=normal_customer+1
+                frm__customer_output.normal_customer.value=normal_customer
+                frm__customer_output.VIP_customer.value=VIP_customer
+                ALERT(id+"-"+name+"-"+email);
+                Alert("Nó mà show cái này lên là DONE rùi nè!")
+                td_customer_id=document.getElementById("td_customer_id");
+                td_customer_id.innerText=id;
+                td_customer_name=document.getElementById("td_customer_name");
+                td_customer_name.innerText=name;     
+                td_customer_email=document.getElementById("td_customer_email");
+                td_customer_email.innerHTML="<Font color='blue'>"+email+"</Font>";
+                td_customer_output=document.getElementById("id_customer_output")
+                td_customer_output.setAttribute("style","background-color:yellow")
+            }
+            function show_help_page()
+            {
+                if(confirm("Bạn có muốn mở trang hướng dẫn không?")) {
+                    window.open("help.html", "_blank");
+                } else {
+		            alert("Đã hủy mở trang hướng dẫn.");
+	            }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="frm_customer_input">
+            <table>
+                <tr>
+                    <td> Customer ID: </td>
+                    <td>
+                        <input type="text" name="customer_id" id="customer_id" size="20" maxlength="10"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Customer name: </td>
+                    <td>
+                        <input type="text" name="customer_name" id="customer_name" size="20" maxlength="10"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Customer Email: </td>
+                    <td>
+                        <input type="email" name="customer_email" id="customer_email" size="20" maxlength="10"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="save_customer()">Save Customer</button>
+                        <button type="reset">Clear</button>
+                        <button type="button" onclick="show_help_page()">Help</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 
+                        Type of Customer:
+                    </td>
+                    <td> 
+                        <input type="checkbox" name="type_of_customer" id="type_of_customer1" value="Regular"/>
+                        <label for="type_of_customer1"> VIP </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="save_customer()"> Save Customer </button>
+                        <button type="reset"> Clear </button>
+                        <button type="button"> Help </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <form name="frm_customer_output">
+            <table>
+                <tr>
+                    <td> Number of Normal Customer: </td>
+                    <td>
+                        <input type="text" name="normal_customer" id="normal_customer"> </td>
+                </tr>
+                <tr>
+                    <td> Number of VIP Customer: </td>
+                    <td>
+                        <input type="text" name="VIP_customer" id="VIP_customer"> </td>
+                </tr>
+                <tr>
+                    <td colspan="2"> Lasted Customer </td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="td_customer_output">  
+                        <table border="1">
+                            <tr>
+                                <td> Customer ID: </td>
+                                <td id="td_customer_id"> &nbsp; </td>
+                            </tr>
+                            <tr>
+                                <td> Customer Name: </td>
+                                <td id="td_customer_name"> &nbsp; </td>
+                            </tr>
+                            <tr>
+                                <td> Customer Email: </td>
+                                <td id="td_customer_email"> &nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>        

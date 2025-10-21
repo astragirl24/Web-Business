@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>
+            Flip Image - Đỗ Thị Diễm Hương - K234111390
+        </title>
+        <style>
+            .product-image-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.front {
+    opacity: 1;
+}
+
+.back {
+    opacity: 0;
+}
+
+.product-image-container:hover .front {
+    opacity: 0;
+}
+
+.product-image-container:hover .back {
+    opacity: 1;
+}
+        </style>
+    </head>
+    <body>
+        <div class="image-container">
+            <input type="checkbox" id="flip-checkbox">
+            <label for="flip-checkbox">
+                <img class="first" src="flip_image/tsv1.jpg" alt="Mặt trước"/>
+            </label>
+            <img class="second" src="flip_image/tsv2.jpg" alt="Mặt sau"/>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Đỗ Thị Diễm Hương - K234111390</title>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td id="td_id">ID:</td>
+            </tr>
+            <tr>
+                <td id="td_name">Name:</td>
+            </tr>
+            <tr>
+                <td id="td_quantity">Quantity:</td>
+            </tr>
+            <tr>
+                <td id="td_price">Price:</td>
+            </tr>
+            <tr>
+                <td id="td_photo"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="#">Go back to list</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="#" onclick="window.location='dom_3.html'">Go back to list</a>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            stringJsonObject = localStorage.getItem("selected_product")
+            //convert this string into JsonObject
+            product = JSON.parse(stringJsonObject)
+            td_id.innerHTML = product.ID
+            td_name.innerHTML = product.Name
+            td_quantity.innerHTML = product.Quantity
+            td_price.innerHTML = product.Price
+            td_photo.innerHTML = "<img src='../images/"+product.Photo+"'/>"
+        </script>
+    </body>
+</html>
